@@ -1,0 +1,55 @@
+---
+import { caseStudies } from "../../data/caseStudies";
+---
+
+<section id="case-studies" class="px-6 py-24">
+  <div class="container">
+    <div class="mb-16 max-w-3xl">
+      <p class="text-sm font-semibold uppercase tracking-[0.28em] text-sky-400">
+        Case Studies
+      </p>
+
+      <h2 class="mt-4 text-4xl font-bold tracking-tight text-slate-50 md:text-5xl">
+        From problem framing to business impact.
+      </h2>
+    </div>
+
+    <div class="space-y-8">
+      {
+        caseStudies.map((study) => (
+          <article class="rounded-3xl border border-slate-800 bg-slate-900/60 p-8">
+            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-violet-300">
+              {study.label}
+            </p>
+
+            <h3 class="mt-4 text-3xl font-bold text-slate-50">
+              {study.title}
+            </h3>
+
+            <div class="mt-8 grid gap-4 md:grid-cols-4">
+              <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
+                <h4 class="font-semibold text-sky-400">Problem</h4>
+                <p class="mt-3 text-sm text-slate-400">{study.problem}</p>
+              </div>
+
+              <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
+                <h4 class="font-semibold text-sky-400">Approach</h4>
+                <p class="mt-3 text-sm text-slate-400">{study.approach}</p>
+              </div>
+
+              <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
+                <h4 class="font-semibold text-sky-400">Result</h4>
+                <p class="mt-3 text-sm text-slate-400">{study.result}</p>
+              </div>
+
+              <div class="rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
+                <h4 class="font-semibold text-sky-400">Impact</h4>
+                <p class="mt-3 text-sm text-slate-400">{study.impact}</p>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

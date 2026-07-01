@@ -1,0 +1,63 @@
+---
+import { featuredProjects } from "../../data/projects";
+---
+
+<section id="projects" class="px-6 py-24">
+  <div class="container">
+    <div class="mb-16 max-w-3xl">
+      <p class="text-sm font-semibold uppercase tracking-[0.28em] text-sky-400">
+        Featured Projects
+      </p>
+
+      <h2 class="mt-4 text-4xl font-bold tracking-tight text-slate-50 md:text-5xl">
+        Machine learning projects with business context.
+      </h2>
+
+      <p class="mt-6 text-lg text-slate-300">
+        Selected projects focused on customer behavior, forecasting, risk analytics, and decision support.
+      </p>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-3">
+      {
+        featuredProjects.map((project) => (
+          <article class="group flex flex-col rounded-3xl border border-slate-800 bg-slate-900/60 p-8 transition duration-300 hover:-translate-y-2 hover:border-sky-500">
+            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-violet-300">
+              {project.category}
+            </p>
+
+            <h3 class="mt-4 text-2xl font-bold text-slate-50">
+              {project.title}
+            </h3>
+
+            <p class="mt-4 text-slate-400">
+              {project.description}
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              {project.stack.map((tool) => (
+                <span class="rounded-full border border-slate-700 px-3 py-1 text-sm text-slate-300">
+                  {tool}
+                </span>
+              ))}
+            </div>
+
+            <ul class="mt-6 space-y-2 text-sm text-slate-300">
+              {project.highlights.map((item) => (
+                <li>• {item}</li>
+              ))}
+            </ul>
+
+            <a
+              href={project.link}
+              target="_blank"
+              class="mt-8 inline-flex font-semibold text-sky-400 transition group-hover:text-sky-300"
+            >
+              View repository →
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
